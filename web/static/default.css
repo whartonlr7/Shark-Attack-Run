@@ -1,0 +1,123 @@
+* {
+    position: relative;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a:visited, a:active, a:link {
+    color: black;
+    text-decoration: none;
+}
+
+.normal-link:visited, .normal-link:active, .normal-link:link {
+    text-decoration: underline;
+    color: blue;
+}
+
+#side-container {
+    width: 16.67%;
+    float: left;
+}
+
+.select-label {
+    display: inline-block;
+    width: 100%;
+}
+
+.select-label select {
+    width: 100%;
+}
+
+h1 {
+    text-align: center;
+    background-color: rgb(125, 205, 231);
+    border: 3px solid rgb(18, 171, 222);
+    border-radius: 10px;
+    margin-left: 58px;
+}
+
+#logo {
+    width: 50px;
+    float: left;
+}
+
+html {
+    background-color: lightgray;
+}
+
+img {
+    display: block;
+    margin: auto;
+    width: 75%;
+}
+
+nav {
+    background-color: rgb(125, 205, 231);
+    border: 2px solid rgb(18, 171, 222);
+    border-radius: 10px;
+    height: 100%;
+    margin-bottom: 8px;
+    padding: 3px 8px;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    text-align: center;
+    list-style: none;
+    border: 2px solid rgb(18, 171, 222);
+    border-radius: 10px;
+    margin: 5px 0;
+    animation-name: menuunhover;
+    animation-fill-mode: forwards;
+    animation-duration: .25s;
+    font-size: 16pt;
+}
+
+nav ul li a {
+    display: block;
+    padding: 10px 5px 10px 5px;
+}
+
+nav ul li:hover {
+    animation-name: menuhover;
+    animation-fill-mode: forwards;
+    animation-duration: .25s;
+}
+
+@keyframes menuhover {
+    from {
+        background-color: rgb(125, 205, 231);
+    }
+    to {
+        background-color: rgb(18, 171, 222);
+    }
+}
+
+@keyframes menuunhover {
+    from {
+        background-color: rgb(18, 171, 222);
+    }
+    to {
+        background-color: rgb(125, 205, 231);
+    }
+}
+
+form {
+    background-color: rgb(125, 205, 231);
+    border: 2px solid rgb(18, 171, 222);
+    border-radius: 10px;
+    padding: 8px;
+    font-size: 16pt;
+}
+
+.visibleIfDateFilter {
+    display: none;
+}
+
+h2 {
+    text-align: center;
+}

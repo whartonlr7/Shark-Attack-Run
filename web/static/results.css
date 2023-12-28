@@ -1,0 +1,157 @@
+#ids {
+    width: calc(83.33%);
+    right: -4px;
+    float: right;
+}
+
+#chart-container {
+    width: 83.33%;
+    padding-left: 8px;
+    float: right;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+#chart-container div {
+    border: 1px solid black;
+}
+
+table {
+    border-spacing: 0;
+}
+
+td, th {
+    border: 1px solid black;
+}
+
+div.table-container {
+    position: absolute;
+    width: 25%;
+    margin: 0;
+    padding: 0;
+}
+
+table.hidden-table {
+    width: calc(100% - 8px);
+    margin: 4px;
+    background-image: linear-gradient(rgb(125, 205, 231), rgb(18, 171, 222));
+}
+
+.hidden-table tr {
+    display: none;
+}
+
+tr.attack-id {
+    display: table-row;
+    background-color: rgb(125, 205, 231);
+    height: 50px;
+}
+
+tr.attack-id th {
+    border: 2px solid black
+}
+
+tr.attack-id:hover ~ tr {
+    display: table-row;
+}
+
+.selected .attack-id th {
+    border: 2px solid red;
+}
+
+#comparer-container {
+    position: fixed;
+    padding: 8px;
+    bottom: 0;
+    left: 8px;
+    right: 8px;
+    height: auto;
+    background-color: rgb(125, 205, 231);
+    border: 3px solid rgb(18, 171, 222);
+    border-bottom: none;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    overflow: auto;
+}
+
+#comparer-display {
+    display: grid;
+    justify-content: center;
+    grid-auto-columns: 100%;
+    grid-auto-flow: column;
+    gap: 8px;
+    overflow-x: auto;
+    height: 50px;
+    font-size: 20pt;
+    text-align: center;
+}
+
+#comparer-display > button {
+    height: 50px;
+    background: none;
+    border: 2px solid black;
+}
+
+#comparer-display > button:hover {
+    background-color: red;
+}
+
+
+#comparer-display.compares-selected {
+    justify-content: left;
+    grid-auto-columns: 20%;
+    margin-left: 100px;
+    height: auto;
+}
+
+#compare-button {
+    width: 92px;
+    float: left;
+    display: block;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+#comparer-container.comparing {
+    border: 3px solid black;
+    border-radius: 10px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    bottom: auto;
+    right: auto;
+    max-width: calc(100% - 16px);
+    max-height: calc(100% - 16px);
+}
+
+#comparer-container.comparing * {
+    top: auto;
+    transform: none;
+}
+
+#quit-button {
+    background: none;
+    border: 2px solid black;
+    border-radius: 50%;
+    font-size: 15pt;
+    margin-bottom: 8px;
+    display: inline-block;
+}
+
+#quit-button:hover {
+    background-color: red;
+}
+
+.comparing #comparer-display, .comparing #compare-button {
+    display: none;
+}
+
+.comparing table {
+    display: table;
+}
+
+iframe {
+    padding-left: 8px;
+    width: 83.33%
+}

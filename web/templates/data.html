@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='default.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='subpage.css') }}">
+    <title>About Our Data</title>
+</head>
+<body>
+<a href="{{ url_for('home') }}"><img id="logo"
+                                     alt="Picture of shark running with the words shark attack run. Link to home page"
+                                     src="{{ url_for('static', filename='Logo.png') }}"></a>
+<h1>About Our Data</h1>
+<div id="side-container">
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('attackofday') }}">Shark Attack of the Day</a></li>
+            <li><a href="{{ url_for('data') }}">About Our Data</a></li>
+            <li><a href="{{ url_for('attackulator') }}">Shark Attackulator</a></li>
+            <li><a href="{{ url_for('whereissafe') }}">Where is safe? (or not?)</a></li>
+        </ul>
+    </nav>
+    <form method="post" action="{{ url_for('results') }}" onsubmit="return confirmValidForm()" autocomplete="off">
+        <h2>Search</h2>
+        <input type="checkbox" name="dateFilter" id="dateFilter" onchange="filteredByDate()">
+        <label for="dateFilter">Filter By Date</label>
+        <br class="visibleIfDateFilter">
+        <label for="startDate" class="visibleIfDateFilter">Start Date: </label>
+        <input type="date" name="startDate" id="startDate" class="visibleIfDateFilter" max="2023-01-08">
+        <br class="visibleIfDateFilter">
+        <label for="endDate" class="visibleIfDateFilter">End Date: </label>
+        <input type="date" name="endDate" id="endDate" class="visibleIfDateFilter" max="2023-01-08">
+        <br>
+        <br>
+        <label class="select-label">Filter by Country:<select id="country" name="country">
+            <option value={{ NONE }}>All Countries</option>
+            {% for countryName in countryList %}
+                <option value= {{ countryName[0] }}>{{ countryName[1] }}</option>
+            {% endfor %}
+        </select></label>
+        <label class="select-label">Filter by Species:<select id="species" name="species">
+            <option value={{ NONE }}>All Species</option>
+            {% for specie in speciesList %}
+                <option value= {{ specie[0] }}>{{ specie[1] }}</option>
+            {% endfor %}
+        </select></label>
+        <label class="select-label">Filter by Activity:<select id="activity" name="activity">
+            <option value={{ NONE }}>All Activities</option>
+            {% for activity in activityList %}
+                <option value= {{ activity[0] }}>{{ activity[1] }}</option>
+            {% endfor %}
+        </select></label>
+        <br>
+        <label><input type="submit" name="submit" value="Search"></label>
+    </form>
+</div>
+<div id="info">
+    <p><strong>Source:</strong> <a href="https://www.sharkattackfile.net/incidentlog.htm" class="normal-link">Global Shark Attack
+        Database</a></p>
+    <p><strong>Authorship:</strong> <a href="https://sharks.org" class="normal-link">Shark Research Institute</a></p>
+    <p><strong>Licensing:</strong> Public Domain</p>
+    <p><strong>Modifications:</strong> Certain typos fixed</p>
+    <p><strong>Version:</strong> GSAF-5</p>
+    <p><strong>Most Recent Update:</strong> January 16, 2023</p>
+    <p><strong>Covered Time Period:</strong> All documented shark attacks up to January 16, 2023 (including cave
+        paintings from cavemen)</p>
+</div>
+<script src="{{ url_for('static', filename='default.js') }}"></script>
+</body>
+</html>

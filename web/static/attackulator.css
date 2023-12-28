@@ -1,0 +1,43 @@
+#attackulator-form {
+    width: calc(83.33% - 8px);
+    float: left;
+    font-family: sans-serif;
+    margin-left: 8px;
+}
+
+h3 {
+    width: calc(83.33% - 8px);
+    text-align: left;
+    float: left;
+    margin-left: 8px;
+}
+
+#attackulator-page{
+    background-image: url('../static/sharkWar.png');
+    background-size: 100%;
+    height: 100%;
+}
+
+#attackulator-body {
+    height: 100%;
+    overflow: hidden;
+}
+
+#results-container{
+    text-align: center;
+    float: left;
+    width: 83.33%;
+    height: 100%;
+    padding-left: 8px;
+}
+
+#results {
+    top: 50%;
+    left: 50%;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    display: inline-block;
+    width: auto;
+    background: radial-gradient(closest-side at 50%, white 80%, transparent);
+    padding: 50px;
+}
